@@ -1,9 +1,8 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from server.config import Config
+from server import db 
 
-db = SQLAlchemy()
 migrate = Migrate()
 
 def create_app():
@@ -26,3 +25,4 @@ def create_app():
     app.register_blueprint(restaurant_pizzas_bp)
     
     return app
+app = create_app()   
